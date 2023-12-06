@@ -19,8 +19,8 @@ def receive_handler(sock_):
             print("<" + res.decode() + ">")  # サーバーから送られてきた情報をプリント
             print(">")
 
-        except Exception as e:
-            print(e)
+        except Exception as ex:
+            # print(e)
             break
 
     time.sleep(1)
@@ -37,10 +37,10 @@ while True:
         print("処理終了です")
         break
     try:
-        sock.send(your_input.encode("UTF-8")) #サーバーに対してデータを送る
+        sock.send(your_input.encode("UTF-8"))  # サーバーに対してデータを送る
     except Exception as e:
         print(e)
         break
 
-    sock.shutdown(socket.SHUT_RDWR) #サーバーと接続を切る
+    sock.shutdown(socket.SHUT_RDWR)  # サーバーと接続を切る
     sock.close()

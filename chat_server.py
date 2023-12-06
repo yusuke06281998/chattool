@@ -34,10 +34,8 @@ def loop_handler(connection, address):
                 else:
                     # クライアントに受け取ったメッセージを送信
                     client[0].send(messages.encode('UTF-8'))
-
-
-        except Exception as e:
-            print(e)
+        except Exception as ex:
+            print(ex)
             break
 
     clients.remove((connection, address))  # クライアントから対象のクライアントを削除
